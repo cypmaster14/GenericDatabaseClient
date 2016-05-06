@@ -92,6 +92,7 @@ public class SubmitQueryListener implements ActionListener {
 				
 				
 				JTable table = new JTable();
+				table.getTableHeader().setReorderingAllowed(false);
 				table.setModel(new MyTableModel(tableContent, tableHead));
 				table.setShowGrid(false);
 		        table.setShowHorizontalLines(false);
@@ -108,6 +109,10 @@ public class SubmitQueryListener implements ActionListener {
 				UserGui.resultPanel.add(internFrame);
 				
 				///Incepem sa scriem in tabel
+				
+				gui.report.add(new Paragraph("Comanda este:"+query));
+				gui.report.add(new Paragraph(""));
+				
 				PdfPTable reportTabel= new PdfPTable(numberOfColumns);
 				for(i=0;i<tableHead.length;i++)
 				{
